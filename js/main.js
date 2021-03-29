@@ -7,7 +7,7 @@ async function flip() {
     const res = await fetch('/coinflip')
 
     const data = await res.json()
-    console.log(data)
+    console.log(data.value)
     if (data.value === '1') {
         heads += 1
         document.querySelector('h2').innerHTML = 'Heads'

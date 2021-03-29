@@ -6,8 +6,8 @@ app.listen(5000, function () {
 })
 
 app.get('/coinflip', (req, res) => {
-    // res.sendFile(__dirname + '/js/main.js')
     let headsOrTails = Math.ceil(Math.random() * 2)
+    console.log(headsOrTails)
     res.writeHead(200, { 'Content-Type': 'application/json' });
     const objToJson = {
         value: `${headsOrTails}`
@@ -20,16 +20,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 
 })
-
-// app.get('/coinflip', (req, res) => {
-//     // res.sendFile(__dirname + '/js/main.js')
-//     let headsOrTails = Math.ceil(Math.random() * 2)
-//     res.writeHead(200, { 'Content-Type': 'application/json' });
-//     const objToJson = {
-//         value: `${headsOrTails}`
-//     }
-//     res.end(JSON.stringify(objToJson))
-// })
 
 app.get('/js/main.js', (req, res) => {
     res.sendFile(__dirname + '/js/main.js')
